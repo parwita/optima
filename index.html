@@ -4,193 +4,316 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Static HTML Site Boilerplate</title>
-  <link rel="icon" type="image/x-icon" href="static/favicon.ico" />
+  <title>Optima</title>
+  <link rel="icon" type="image/x-icon" href="./static/img/favicon.png" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   <!-- Google fonts-->
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+  <style>
+        .content { 
+                display: none; 
+        }
+        .loading-overlay { 
+            position: fixed; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 9999; 
+            opacity: 1; 
+            /* Initial opacity */ 
+            transform: scale(1); 
+            /* Initial scale */ 
+            animation: scaleOpacity 2s ease-in-out forwards; 
+            /* Apply animation */ 
+        } 
+  
+        @keyframes scaleOpacity { 
+            0% { 
+                /* transform: scale(1);  */
+                opacity: 1; 
+            } 
+  
+            100% { 
+                /* transform: scale(0.8);  */
+                opacity: 0; 
+                display: none; 
+                /* Hide overlay after animation */ 
+            } 
+        } 
+  
+        .loading-logo { 
+            background: url('./static/img/loading-logo.svg');
+            background-repeat: no-repeat;
+            margin-bottom: 20px;
+            width: 60px; 
+            height: 60px; 
+
+            animation: beat 1.5s ease-in-out infinite; 
+        } 
+  
+        @keyframes beat { 
+            0% { 
+                transform: scale(1); 
+                opacity: 0;
+            } 
+
+            50% {
+                opacity: 1;
+            }
+  
+            100% { 
+                opacity: 0;
+                transform: scale(1.2); 
+            } 
+        } 
+  </style>
 <link href="main.css" rel="stylesheet"></head>
 
 <body id="page-top">
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              Menu
-              <i class="fas fa-bars"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ms-auto">
-                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-  <!-- Masthead-->
-  <header class="masthead">
-      <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-          <div class="d-flex justify-content-center">
-              <div class="text-center">
-                  <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
-                  <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
-                  <a class="btn btn-primary" href="#about">Get Started</a>
-              </div>
-          </div>
-      </div>
-  </header>
-  <!-- About-->
-  <section class="about-section text-center" id="about">
-      <div class="container px-4 px-lg-5">
-          <div class="row gx-4 gx-lg-5 justify-content-center">
-              <div class="col-lg-8">
-                  <h2 class="text-white mb-4">Built with Bootstrap 5</h2>
-                  <p class="text-white-50">
-                      Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                      <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
-                      The theme is open source, and you can use it for any purpose, personal or commercial.
-                  </p>
-              </div>
-          </div>
-          <img class="img-fluid" src="static/img/ipad.png" alt="..." />
-      </div>
-  </section>
-  <!-- Projects-->
-  <section class="projects-section bg-light" id="projects">
-      <div class="container px-4 px-lg-5">
-          <!-- Featured Project Row-->
-          <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-              <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="static/img/bg-masthead.jpg" alt="..." /></div>
-              <div class="col-xl-4 col-lg-5">
-                  <div class="featured-text text-center text-lg-left">
-                      <h4>Shoreline</h4>
-                      <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
-                  </div>
-              </div>
-          </div>
-          <!-- Project One Row-->
-          <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-              <div class="col-lg-6"><img class="img-fluid" src="static/img/demo-image-01.jpg" alt="..." /></div>
-              <div class="col-lg-6">
-                  <div class="bg-black text-center h-100 project">
-                      <div class="d-flex h-100">
-                          <div class="project-text w-100 my-auto text-center text-lg-left">
-                              <h4 class="text-white">Misty</h4>
-                              <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- Project Two Row-->
-          <div class="row gx-0 justify-content-center">
-              <div class="col-lg-6"><img class="img-fluid" src="static/img/demo-image-02.jpg" alt="..." /></div>
-              <div class="col-lg-6 order-lg-first">
-                  <div class="bg-black text-center h-100 project">
-                      <div class="d-flex h-100">
-                          <div class="project-text w-100 my-auto text-center text-lg-right">
-                              <h4 class="text-white">Mountains</h4>
-                              <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well!</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  <!-- Signup-->
-  <section class="signup-section" id="signup">
-      <div class="container px-4 px-lg-5">
-          <div class="row gx-4 gx-lg-5">
-              <div class="col-md-10 col-lg-8 mx-auto text-center">
-                  <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                  <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-                  <!-- * * * * * * * * * * * * * * *-->
-                  <!-- * * SB Forms Contact Form * *-->
-                  <!-- * * * * * * * * * * * * * * *-->
-                  <!-- This form is pre-integrated with SB Forms.-->
-                  <!-- To make this form functional, sign up at-->
-                  <!-- https://startbootstrap.com/solution/contact-forms-->
-                  <!-- to get an API token!-->
-                  <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                      <!-- Email address input-->
-                      <div class="row input-group-newsletter">
-                          <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                          <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
-                      </div>
-                      <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
-                      <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
-                      <!-- Submit success message-->
-                      <!---->
-                      <!-- This is what your users will see when the form-->
-                      <!-- has successfully submitted-->
-                      <div class="d-none" id="submitSuccessMessage">
-                          <div class="text-center mb-3 mt-2 text-white">
-                              <div class="fw-bolder">Form submission successful!</div>
-                              To activate this form, sign up at
-                              <br />
-                              <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                          </div>
-                      </div>
-                      <!-- Submit error message-->
-                      <!---->
-                      <!-- This is what your users will see when there is-->
-                      <!-- an error submitting the form-->
-                      <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
-                  </form>
-              </div>
-          </div>
-      </div>
-  </section>
-  <!-- Contact-->
-  <section class="contact-section bg-black">
-      <div class="container px-4 px-lg-5">
-          <div class="row gx-4 gx-lg-5">
-              <div class="col-md-4 mb-3 mb-md-0">
-                  <div class="card py-4 h-100">
-                      <div class="card-body text-center">
-                          <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                          <h4 class="text-uppercase m-0">Address</h4>
-                          <hr class="my-4 mx-auto" />
-                          <div class="small text-black-50">4923 Market Street, Orlando FL</div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 mb-3 mb-md-0">
-                  <div class="card py-4 h-100">
-                      <div class="card-body text-center">
-                          <i class="fas fa-envelope text-primary mb-2"></i>
-                          <h4 class="text-uppercase m-0">Email</h4>
-                          <hr class="my-4 mx-auto" />
-                          <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 mb-3 mb-md-0">
-                  <div class="card py-4 h-100">
-                      <div class="card-body text-center">
-                          <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                          <h4 class="text-uppercase m-0">Phone</h4>
-                          <hr class="my-4 mx-auto" />
-                          <div class="small text-black-50">+1 (555) 902-8832</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="social d-flex justify-content-center">
-              <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-              <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-              <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
-          </div>
-      </div>
-  </section>
-  <!-- Footer-->
-  <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2023</div></footer>
-  <!-- Bootstrap core JS-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Loading Page -->
+    <div class="loading-overlay"> 
+        <div class="loading-logo"></div> 
+    </div> 
+    <div class="content">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">
+                <img class="logo" src="static/img/logo.svg" alt="..." />
+                <img class="logo-scrolled" src="static/img/logo-2.svg" alt="..." />
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Our Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Articles</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="text-white mx-auto my-5 text-uppercase">24-Hour medical services ready to come directly to your place</h1>
+                        <!-- <span class="custom-line"></span> -->
+                        <h2 class="text-white mx-auto mt-2 mb-5">
+                        Expert consultations, compassionate home visits, and advanced wellness solutions await you at Optima
+                        </h2>
+                        <a class="btn btn-primary" href="#">Consult via Whatsapp</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-white mb-4">REFINED EXPERTISE: NURTURING YOUR HEALTH WITH CARE</h2>
+                    </div>
+                </div>
+                <!-- <img class="img-fluid" src="static/img/ipad.png" alt="..." /> -->
+            </div>
+        </section>
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-lg-6"><img class="img-fluid mb-3 mb-lg-0" src="static/img/admin.png" alt="..." /></div>
+                    <div class="col-lg-6">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4 class="mb-5">YOUR HEALTH, YOUR SPACE: DOCTOR HOME SERVICE TAILORED FOR YOUR COMFORT</h4>
+                            <p class="text-black-50 mb-0">
+                                Experience the convenience of professional healthcare delivered right to your doorstep in the heart of Bali’s tourism hub. Our skilled doctors provide expert consultation services, whether you’re staying in a hotel, villa, residence, or working in an office.
+                                <br>
+                                Equipped with all necessary facilities, medications, and even laboratory tests if required, we bring healthcare to your front door. No more hassle of commuting to a healthcare facility. Enjoy healthcare services from the comfort of your own space. And there’s more. We provide the added convenience of generating detailed medical reports for easy insurance reimbursements, ensuring peace of mind for both your health and financial well-being.
+                                <br>
+                                Elevate your Bali experience with Optima. Discover a new level of healthcare tailored to your comfort and convenience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="static/img/doctor.png" alt="..." /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-primary text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">DIVERSE HEALTH SERVICES: YOUR PATH TO TOTAL WELLNESS</h4>
+                                    <p class="text-white">
+                                        Discover a wide range of services tailored for your well-being. From 24/7 medical care and advanced lab facilities to IV vitamin therapy and expert wound care, we have your health covered. 
+                                    </p>
+                                    <p class="text-white">
+                                        Also, benefit from Medical Check-ups, teleconsultations, medical equipment rentals, Covid-19 testing, vaccinations, home nursing, first aid training, and swift ambulance services. Your health and well-being are our top priorities. We’ve condensed this list for easy comprehension and engagement.
+                                    </p>
+                                    <p class="text-white">
+                                        We emphasize open communication between doctors and patients, ensuring that consultations are comfortable and that individual needs are met. We’re dedicated to continuously improving our services and facilities in line with the evolving needs and preferences of our valued patients. Elevate your healthcare experience with us. Choose Diverse Health Services for your complete well-being.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Two Row-->
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="static/img/nurse.png" alt="..." /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-primary text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">WALK IN AND EXPERIENCE SEAMLESS CARE FOR YOUR HEALTH NEEDS</h4>
+                                    <p class="text-white">
+                                        For those in close proximity to our center, we extend a warm welcome. You can easily seek prompt care by visiting us directly at Jl. Raya Semer No. 63, Kerobokan. Feel free to walk in at your convenience or if you prefer, schedule an appointment in advance.
+                                    </p>
+                                    <p class="text-white">
+                                        Experience seamless healthcare designed with your needs in mind. At Optima Medical, we are dedicated to providing you with exceptional medical services in a manner that ensures your comfort. You can trust us to prioritize your well-being.
+                                    </p>
+                                    <p class="text-white">
+                                        Should you have any questions or require further information, please do not hesitate to contact us. We look forward to serving you.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Google Review-->
+        <section class="signup-section" id="signup">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-12 mx-auto text-center">
+                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <!-- <div id="google-reviews"></div> -->
+                        <div class='sk-ww-google-reviews' data-embed-id='243210'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Signup-->
+        <section class="signup-section" id="signup">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5">
+                            Looking for reliable 24-hours medical services? <br>
+                            Get in touch with us for professional care!</h2>
+                        <a class="btn btn-primary" href="#about">Consult via Whatsapp</a>
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <!-- <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN"> -->
+                            <!-- Email address input-->
+                            <!-- <div class="row input-group-newsletter">
+                                <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                                <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                            </div>
+                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
+                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div> -->
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <!-- <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3 mt-2 text-white">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div> -->
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <!-- <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div> -->
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">Jl. Raya Semer No.63, Kerobokan, Kec. Kuta Utara, Kabupaten Badung, Bali 80361</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">081385911911</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Optima 2023</div></footer>
+    </div>
 
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery-->
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <!-- Google Review -->
+    <!-- <script>
+        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+          key: "AIzaSyAIAC8ZHuGQsdqGfuIza-ihuCV6f_cMj8k",
+          v: "weekly",
+          // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+          // Add other bootstrap parameters as needed, using camel case.
+        });
+    </script> -->
+    <!-- <script src="./js/jquery-google-reviews.js"></script> -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyAIAC8ZHuGQsdqGfuIza-ihuCV6f_cMj8k"></script> -->
+    
 <script type="text/javascript" src="app.bundle.js"></script></body>
