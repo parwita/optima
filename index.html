@@ -54,7 +54,7 @@
             margin-bottom: 20px;
             width: 60px; 
             height: 60px; 
-
+            margin-left: 20px;
             animation: beat 1.5s ease-in-out infinite; 
         } 
   
@@ -90,7 +90,6 @@
                 <img class="logo-scrolled" src="static/img/logo-2.svg" alt="..." />
                 </a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -108,12 +107,12 @@
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
-                        <h1 class="text-white mx-auto my-5 text-uppercase">24-Hour medical services ready to come directly to your place</h1>
+                        <h1 class="text-white mx-auto my-5 text-uppercase animatable fadeInLeft">24-Hour medical services ready to come directly to your place</h1>
                         <!-- <span class="custom-line"></span> -->
-                        <h2 class="text-white mx-auto mt-2 mb-5">
+                        <h2 class="text-white mx-auto mt-2 mb-5 animatable fadeInRight">
                         Expert consultations, compassionate home visits, and advanced wellness solutions await you at Optima
                         </h2>
-                        <a class="btn btn-primary" href="#">Consult via Whatsapp</a>
+                        <a class="btn btn-primary animatable fadeInUp" href="#">Consult via Whatsapp</a>
                     </div>
                 </div>
             </div>
@@ -134,11 +133,11 @@
             <div class="container px-4 px-lg-5">
                 <!-- Featured Project Row-->
                 <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-lg-6"><img class="img-fluid mb-3 mb-lg-0" src="static/img/admin.png" alt="..." /></div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-4"><img class="img-fluid mb-3 mb-lg-0 featured-img" src="static/img/admin.png" alt="..." /></div>
+                    <div class="col-lg-8">
                         <div class="featured-text text-center text-lg-left">
-                            <h4 class="mb-5">YOUR HEALTH, YOUR SPACE: DOCTOR HOME SERVICE TAILORED FOR YOUR COMFORT</h4>
-                            <p class="text-black-50 mb-0">
+                            <h4 class="mb-lg-5" data-animate-in="up">YOUR HEALTH, YOUR SPACE: DOCTOR HOME SERVICE TAILORED FOR YOUR COMFORT</h4>
+                            <p class="text-black-80 mb-0" data-animate-in="down">
                                 Experience the convenience of professional healthcare delivered right to your doorstep in the heart of Bali’s tourism hub. Our skilled doctors provide expert consultation services, whether you’re staying in a hotel, villa, residence, or working in an office.
                                 <br>
                                 Equipped with all necessary facilities, medications, and even laboratory tests if required, we bring healthcare to your front door. No more hassle of commuting to a healthcare facility. Enjoy healthcare services from the comfort of your own space. And there’s more. We provide the added convenience of generating detailed medical reports for easy insurance reimbursements, ensuring peace of mind for both your health and financial well-being.
@@ -149,20 +148,20 @@
                     </div>
                 </div>
                 <!-- Project One Row-->
-                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="static/img/doctor.png" alt="..." /></div>
-                    <div class="col-lg-6">
+                <div class="row gx-0 mb-5 mb-lg-5 justify-content-center">
+                    <div class="col-lg-5 position-relative"><img class="img-fluid img-overlap left" src="static/img/doctor.png" alt="..." /></div>
+                    <div class="col-lg-7">
                         <div class="bg-primary text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">DIVERSE HEALTH SERVICES: YOUR PATH TO TOTAL WELLNESS</h4>
-                                    <p class="text-white">
+                                    <h3 class="text-white" data-animate-in="left">DIVERSE HEALTH SERVICES: YOUR PATH TO TOTAL WELLNESS</h4>
+                                    <p class="text-white" data-animate-in="right">
                                         Discover a wide range of services tailored for your well-being. From 24/7 medical care and advanced lab facilities to IV vitamin therapy and expert wound care, we have your health covered. 
                                     </p>
-                                    <p class="text-white">
+                                    <p class="text-white" data-animate-in="right">
                                         Also, benefit from Medical Check-ups, teleconsultations, medical equipment rentals, Covid-19 testing, vaccinations, home nursing, first aid training, and swift ambulance services. Your health and well-being are our top priorities. We’ve condensed this list for easy comprehension and engagement.
                                     </p>
-                                    <p class="text-white">
+                                    <p class="text-white" data-animate-in="right">
                                         We emphasize open communication between doctors and patients, ensuring that consultations are comfortable and that individual needs are met. We’re dedicated to continuously improving our services and facilities in line with the evolving needs and preferences of our valued patients. Elevate your healthcare experience with us. Choose Diverse Health Services for your complete well-being.
                                     </p>
                                 </div>
@@ -172,19 +171,19 @@
                 </div>
                 <!-- Project Two Row-->
                 <div class="row gx-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="static/img/nurse.png" alt="..." /></div>
-                    <div class="col-lg-6 order-lg-first">
+                    <div class="col-lg-5 position-relative"><img class="img-fluid img-overlap right" src="static/img/nurse.png" alt="..." /></div>
+                    <div class="col-lg-7 order-lg-first">
                         <div class="bg-primary text-center h-100 project">
                             <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">WALK IN AND EXPERIENCE SEAMLESS CARE FOR YOUR HEALTH NEEDS</h4>
-                                    <p class="text-white">
+                                <div class="project-text right w-100 my-auto text-center text-lg-right">
+                                    <h3 class="text-white" data-animate-in="right">WALK IN AND EXPERIENCE SEAMLESS CARE FOR YOUR HEALTH NEEDS</h4>
+                                    <p class="text-white" data-animate-in="left">
                                         For those in close proximity to our center, we extend a warm welcome. You can easily seek prompt care by visiting us directly at Jl. Raya Semer No. 63, Kerobokan. Feel free to walk in at your convenience or if you prefer, schedule an appointment in advance.
                                     </p>
-                                    <p class="text-white">
+                                    <p class="text-white" data-animate-in="left">
                                         Experience seamless healthcare designed with your needs in mind. At Optima Medical, we are dedicated to providing you with exceptional medical services in a manner that ensures your comfort. You can trust us to prioritize your well-being.
                                     </p>
-                                    <p class="text-white">
+                                    <p class="text-white" data-animate-in="left">
                                         Should you have any questions or require further information, please do not hesitate to contact us. We look forward to serving you.
                                     </p>
                                 </div>
@@ -195,17 +194,30 @@
             </div>
         </section>
         <!-- Google Review-->
-        <section class="signup-section" id="signup">
+        <section class="google-review-section" id="google-review">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-md-12 mx-auto text-center">
-                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <i class="far fa-message fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5">What They Said About Our Services</h2>
                         <!-- <div id="google-reviews"></div> -->
                         <div class='sk-ww-google-reviews' data-embed-id='243210'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Instagram Feed-->
+        <section class="instagram-section" id="instagram">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-12 mx-auto text-center">
+                        <div class='sk-instagram-feed' data-embed-id='244551'></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Signup-->
         <section class="signup-section" id="signup">
             <div class="container px-4 px-lg-5">
@@ -216,39 +228,6 @@
                             Looking for reliable 24-hours medical services? <br>
                             Get in touch with us for professional care!</h2>
                         <a class="btn btn-primary" href="#about">Consult via Whatsapp</a>
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <!-- <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN"> -->
-                            <!-- Email address input-->
-                            <!-- <div class="row input-group-newsletter">
-                                <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                                <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
-                            </div>
-                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
-                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div> -->
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <!-- <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3 mt-2 text-white">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div> -->
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <!-- <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div> -->
-                        <!-- </form> -->
                     </div>
                 </div>
             </div>
@@ -258,28 +237,12 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
+                        <div class="card py-4 h-100 animatable moveUp">
                             <div class="card-body text-center">
                                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Address</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">Jl. Raya Semer No.63, Kerobokan, Kec. Kuta Utara, Kabupaten Badung, Bali 80361</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Email</h4>
-                                <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
+                                <div class="small text-black-50 mb-5">Jl. Raya Semer No.63, Kerobokan, Kec. Kuta Utara, Kabupaten Badung, Bali 80361</div>
                                 <i class="fas fa-mobile-alt text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Phone</h4>
                                 <hr class="my-4 mx-auto" />
@@ -287,11 +250,18 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-8 mb-3 mb-md-0">
+                        <div class="card py-0 h-100 animatable moveUp">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map text-primary mb-2"></i>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.4065527474986!2d115.1624447!3d-8.652827799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2394db54b8769%3A0x7c96a006aa62e5c2!2sOptima%20Medical!5e0!3m2!1sen!2sid!4v1703023540713!5m2!1sen!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </section>
@@ -315,5 +285,5 @@
     </script> -->
     <!-- <script src="./js/jquery-google-reviews.js"></script> -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyAIAC8ZHuGQsdqGfuIza-ihuCV6f_cMj8k"></script> -->
-    
+    <script src='https://widgets.sociablekit.com/instagram-feed/widget.js' async defer></script>
 <script type="text/javascript" src="app.bundle.js"></script></body>
