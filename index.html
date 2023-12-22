@@ -83,7 +83,7 @@
     </div> 
     <div class="content">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="#page-top">
                 <img class="logo" src="static/img/logo.svg" alt="..." />
@@ -101,14 +101,51 @@
                     </ul>
                 </div>
             </div>
+        </nav> -->
+        <nav id="navbar" class="">
+            <div class="nav-wrapper">
+              <!-- Navbar Logo -->
+              <div class="logo">
+                <!-- Logo Placeholder for Inustration -->
+                <a href="#home">
+                    <img class="logo-base" src="static/img/logo.svg" alt="..." />
+                    <img class="logo-scrolled" src="static/img/logo-2.svg" alt="..." />
+                </a>
+              </div>
+          
+              <!-- Navbar Links -->
+              <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#about">IV Packages</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+              </ul>
+            </div>
         </nav>
+          
+          
+        <!-- Menu Icon -->
+        <div class="menuIcon">
+            <span class="icon icon-bars"></span>
+            <span class="icon icon-bars overlay"></span>
+        </div>
+          
+          
+        <div class="overlay-menu">
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#about">IV Packages</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+              </ul>
+        </div>
+
         <!-- Masthead-->
-        <header class="masthead">
+        <!-- <header class="masthead">
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
                         <h1 class="text-white mx-auto my-5 text-uppercase animatable fadeInLeft">24-Hour medical services ready to come directly to your place</h1>
-                        <!-- <span class="custom-line"></span> -->
                         <h2 class="text-white mx-auto mt-2 mb-5 animatable fadeInRight">
                         Expert consultations, compassionate home visits, and advanced wellness solutions await you at Optima
                         </h2>
@@ -118,20 +155,57 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </header> -->
         <!-- About-->
-        <section class="about-section text-center" id="about">
+        <!-- <section class="about-section text-center" id="about">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="text-white mb-4">REFINED EXPERTISE: NURTURING YOUR HEALTH WITH CARE</h2>
                     </div>
                 </div>
-                <!-- <img class="img-fluid" src="static/img/ipad.png" alt="..." /> -->
+            </div>
+        </section> -->
+
+        <!-- Animated Hero -->
+        <section id="hero" class="hero">
+            <div class="background hero__background">
+                <div class="background__text">
+                    <span>Optima</span>
+                </div>
+                <svg class="background__tile" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="262.5" y="87.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="262.5" y="175" width="87.5" height="87.5" fill="white"/>
+                    <rect x="175" y="87.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="175" y="175" width="87.5" height="87.5" fill="white"/>
+                    <rect x="87.5" y="175" width="87.5" height="87.5" fill="white"/>
+                    <rect x="175" y="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="262.5" y="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="87.5" y="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect y="262.5" width="87.5" height="87.5" fill="white"/>
+                </svg>
+    
+                <svg class="background__wave" width="100%" height="150px" fill="none"><path fill="white" d="M 0 81.4529 C 312.861 86.1755 443.115 151.636 870.8 49.1233 C 1292.68 -52.5833 1311.74 30.9535 1530.27 65.3886 C 1835.33 110.679 2160.19 178.354 2560 81.453 V 227.455 L 0 227.454 V 81.4529 Z"><animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="20s" values="M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z; M0 86.3149C316 86.315 444 159.155 884 51.1554C1324 -56.8446 1320.29 34.1214 1538 70.4063C1814 116.407 2156 188.408 2560 86.315V232.317L0 232.316V86.3149Z; M0 53.6584C158 11.0001 213 0 363 0C513 0 855.555 115.001 1154 115.001C1440 115.001 1626 -38.0004 2560 53.6585V199.66L0 199.66V53.6584Z; M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z"></animate></path></svg>
+            </div>
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span>24-Hour medical</span> services ready to come directly to your place
+                </h1>
+                <p class="hero__subtitle">
+                    Expert consultations, compassionate home visits, and advanced wellness solutions await you at Optima
+                </p>
+                <div class="hero__scroll">
+                    <span>Scroll Down</span>
+                    <svg width="25" height="37" viewBox="0 0 25 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.5 0V35M12.5 35L1 23.5M12.5 35L24 23.5" stroke="#C1D9CB" stroke-width="2"/>
+                    </svg>
+                </div>
             </div>
         </section>
+        
         <!-- Projects-->
-        <section class="projects-section bg-light" id="projects">
+        <section class="projects-section" id="projects">
             <div class="container px-4 px-lg-5">
                 <!-- Featured Project Row-->
                 <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
@@ -203,7 +277,7 @@
                         <i class="far fa-message fa-2x mb-2 text-white"></i>
                         <h2 class="text-white mb-5" data-animate-in="up">What They Said About Our Services</h2>
                         <!-- <div id="google-reviews"></div> -->
-                        <div class='sk-ww-google-reviews' data-embed-id='243210' data-animate-in="right"></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
+                        <div class='sk-ww-google-reviews' data-embed-id='243210'></div><script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
                     </div>
                 </div>
             </div>
