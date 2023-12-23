@@ -32,6 +32,7 @@
             /* Initial scale */ 
             animation: scaleOpacity 2s ease-in-out forwards; 
             /* Apply animation */ 
+            pointer-events: none;
         } 
   
         @keyframes scaleOpacity { 
@@ -52,8 +53,8 @@
             background: url('./static/img/loading-logo.svg');
             background-repeat: no-repeat;
             margin-bottom: 20px;
-            width: 60px; 
-            height: 60px; 
+            width: 100px; 
+            height: 100px; 
             margin-left: 20px;
             animation: beat 1.5s ease-in-out infinite; 
         } 
@@ -83,79 +84,47 @@
     </div> 
     <div class="content">
         <!-- Navigation-->
-        <!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">
-                <img class="logo" src="static/img/logo.svg" alt="..." />
-                <img class="logo-scrolled" src="static/img/logo-2.svg" alt="..." />
-                </a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Our Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#signup">Articles</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#signup">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
-        <nav id="navbar" class="">
-            <div class="nav-wrapper">
-              <!-- Navbar Logo -->
-              <div class="logo">
-                <!-- Logo Placeholder for Inustration -->
-                <a href="#home">
-                    <img class="logo-base" src="static/img/logo.svg" alt="..." />
-                    <img class="logo-scrolled" src="static/img/logo-2.svg" alt="..." />
-                </a>
-              </div>
-          
-              <!-- Navbar Links -->
-              <ul id="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Our Services</a></li>
-                <li><a href="#about">IV Packages</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-              </ul>
-            </div>
-        </nav>
-          
-          
-        <!-- Menu Icon -->
-        <div class="menuIcon">
-            <span class="icon icon-bars"></span>
-            <span class="icon icon-bars overlay"></span>
-        </div>
-          
-          
-        <div class="overlay-menu">
-            <ul id="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Our Services</a></li>
-                <li><a href="#about">IV Packages</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-              </ul>
-        </div>
+        <section id="navigation">
 
-        <!-- Masthead-->
-        <!-- <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="text-white mx-auto my-5 text-uppercase animatable fadeInLeft">24-Hour medical services ready to come directly to your place</h1>
-                        <h2 class="text-white mx-auto mt-2 mb-5 animatable fadeInRight">
-                        Expert consultations, compassionate home visits, and advanced wellness solutions await you at Optima
-                        </h2>
-                        <a class="btn btn-primary animatable fadeInUp" href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
-                            <i class="fab fa-whatsapp fa-2x text-white align-middle"></i>
-                            Consult via Whatsapp</a>
-                    </div>
+            <nav id="navbar" class="">
+                <div class="nav-wrapper">
+                  <!-- Navbar Logo -->
+                  <div class="logo">
+                    <!-- Logo Placeholder for Inustration -->
+                    <a href="#home">
+                        <img class="logo-base" src="static/img/logo.svg" alt="..." />
+                        <img class="logo-scrolled" src="static/img/logo-2.svg" alt="..." />
+                    </a>
+                  </div>
+              
+                  <!-- Navbar Links -->
+                  <ul id="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#about">IV Packages</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                  </ul>
                 </div>
+            </nav>
+              
+              
+            <!-- Menu Icon -->
+            <div class="menuIcon">
+                <span class="icon icon-bars"></span>
+                <span class="icon icon-bars overlay"></span>
             </div>
-        </header> -->
+              
+              
+            <div class="overlay-menu">
+                <ul id="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#about">IV Packages</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                  </ul>
+            </div>
+        </section>
+
         <!-- About-->
         <!-- <section class="about-section text-center" id="about">
             <div class="container px-4 px-lg-5">
@@ -168,7 +137,7 @@
         </section> -->
 
         <!-- Animated Hero -->
-        <section id="hero" class="hero">
+        <div id="hero" class="hero">
             <div class="background hero__background">
                 <div class="background__text">
                     <span>Optima</span>
@@ -192,9 +161,9 @@
                 <h1 class="hero__title">
                     <span>24-Hour medical</span> services ready to come directly to your place
                 </h1>
-                <p class="hero__subtitle">
+                <!-- <p class="hero__subtitle">
                     Expert consultations, compassionate home visits, and advanced wellness solutions await you at Optima
-                </p>
+                </p> -->
                 <div class="hero__scroll">
                     <span>Scroll Down</span>
                     <svg width="25" height="37" viewBox="0 0 25 37" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -202,7 +171,7 @@
                     </svg>
                 </div>
             </div>
-        </section>
+        </div>
         
         <!-- Projects-->
         <section class="projects-section" id="projects">
@@ -269,6 +238,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Google Review-->
         <section class="google-review-section" id="google-review">
             <div class="container px-4 px-lg-5">
@@ -298,7 +268,7 @@
         <section class="signup-section" id="signup">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5">
-                    <div class="col-md-10 col-lg-8 mx-auto text-center" data-animate-in="up">
+                    <div class="col-md-12 col-xl-8 mx-auto text-center" data-animate-in="up">
                         <i class="far fa-paper-plane fa-2x mb-5 text-white"></i>
                         <h2 class="text-white mb-5" data-animate-in="left">
                             Looking for reliable 24-hours medical services? <br>
@@ -311,6 +281,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Contact-->
         <section class="contact-section bg-black">
             <div class="container px-4 px-lg-5">
@@ -339,13 +310,23 @@
                     </div>
                 </div>
                 <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="https://www.instagram.com/optimamedical.bali/"><i class="fab fa-instagram"></i></a>
-                    <a class="mx-2" href="https://youtube.com/@OptimaMedical"><i class="fab fa-youtube"></i></a>
+                    <a class="mx-2" target="_blank" href="https://www.instagram.com/optimamedical.bali/"><i class="fab fa-instagram"></i></a>
+                    <a class="mx-2" target="_blank" href="https://youtube.com/@OptimaMedical"><i class="fab fa-youtube"></i></a>
+                    <a class="mx-2" target="_blank" href="https://www.facebook.com/optimamedical.id?mibextid=JRoKGi"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </section>
+
+        <!-- Whatsapp Side Button -->
+        <div class="wa__button">
+            <a class="btn btn-primary" target="_blank" href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                <i class="fab fa-whatsapp fa-3x text-white align-middle"></i>
+            </a>
+        </div>
+
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Optima 2023</div></footer>
+        
     </div>
 
     
