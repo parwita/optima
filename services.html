@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optima</title>
+  <link rel="icon" type="image/x-icon" href="./static/img/favicon.png" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+  <style>
+        .content { 
+                display: none; 
+        }
+        .loading-overlay { 
+            position: fixed; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 9999; 
+            opacity: 1; 
+            /* Initial opacity */ 
+            transform: scale(1); 
+            /* Initial scale */ 
+            animation: scaleOpacity 2s ease-in-out forwards; 
+            /* Apply animation */ 
+            pointer-events: none;
+        } 
+  
+        @keyframes scaleOpacity { 
+            0% { 
+                /* transform: scale(1);  */
+                opacity: 1; 
+            } 
+  
+            100% { 
+                /* transform: scale(0.8);  */
+                opacity: 0; 
+                display: none; 
+                /* Hide overlay after animation */ 
+            } 
+        } 
+  
+        .loading-logo { 
+            background: url('./static/img/loading-logo.svg');
+            background-repeat: no-repeat;
+            margin-bottom: 20px;
+            width: 100px; 
+            height: 100px; 
+            margin-left: 20px;
+            animation: beat 1.5s ease-in-out infinite; 
+        } 
+  
+        @keyframes beat { 
+            0% { 
+                transform: scale(1); 
+                opacity: 0;
+            } 
+
+            50% {
+                opacity: 1;
+            }
+  
+            100% { 
+                opacity: 0;
+                transform: scale(1.2); 
+            } 
+        } 
+  </style>
+<link href="main.css" rel="stylesheet"></head>
+
+<body id="page-top">
+    <!-- Loading Page -->
+    <div class="loading-overlay"> 
+        <div class="loading-logo"></div> 
+    </div> 
+    <div class="content">
+        <!-- Navigation-->
+        <section id="navigation">
+
+            <nav id="navbar" class="">
+                <div class="nav-wrapper">
+                  <!-- Navbar Logo -->
+                  <div class="logo">
+                    <!-- Logo Placeholder for Inustration -->
+                    <a href="#home">
+                        <img class="logo-base" src="static/img/logo.svg" alt="..." />
+                        <img class="logo-scrolled" src="static/img/logo-2.svg" alt="..." />
+                    </a>
+                  </div>
+              
+                  <!-- Navbar Links -->
+                  <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Our Services</a></li>
+                    <li><a href="#about">IV Packages</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                  </ul>
+                </div>
+            </nav>
+              
+              
+            <!-- Menu Icon -->
+            <div class="menuIcon">
+                <span class="icon icon-bars"></span>
+                <span class="icon icon-bars overlay"></span>
+            </div>
+              
+              
+            <div class="overlay-menu">
+                <ul id="menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="#about">IV Packages</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                  </ul>
+            </div>
+        </section>
+
+        <!-- Animated Hero -->
+        <div id="hero" class="hero">
+            <div class="background hero__background">
+                <div class="background__text">
+                    <span>Optima</span>
+                </div>
+                <svg class="background__tile" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="262.5" y="87.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="262.5" y="175" width="87.5" height="87.5" fill="white"/>
+                    <rect x="175" y="87.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="175" y="175" width="87.5" height="87.5" fill="white"/>
+                    <rect x="87.5" y="175" width="87.5" height="87.5" fill="white"/>
+                    <rect x="175" y="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="262.5" y="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="87.5" y="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect y="262.5" width="87.5" height="87.5" fill="white"/>
+                </svg>
+    
+                <svg class="background__wave" width="100%" height="150px" fill="none"><path fill="white" d="M 0 81.4529 C 312.861 86.1755 443.115 151.636 870.8 49.1233 C 1292.68 -52.5833 1311.74 30.9535 1530.27 65.3886 C 1835.33 110.679 2160.19 178.354 2560 81.453 V 227.455 L 0 227.454 V 81.4529 Z"><animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="20s" values="M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z; M0 86.3149C316 86.315 444 159.155 884 51.1554C1324 -56.8446 1320.29 34.1214 1538 70.4063C1814 116.407 2156 188.408 2560 86.315V232.317L0 232.316V86.3149Z; M0 53.6584C158 11.0001 213 0 363 0C513 0 855.555 115.001 1154 115.001C1440 115.001 1626 -38.0004 2560 53.6585V199.66L0 199.66V53.6584Z; M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z"></animate></path></svg>
+            </div>
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span>Discover Bali's Best-Kept Secret: </span> Optima's Drip Experience
+                </h1>
+                <!-- <p class="hero__subtitle">
+                    Expert consultations, compassionate home visits, and advanced wellness solutions await you at Optima
+                </p> -->
+                <div class="hero__scroll">
+                    <span>Scroll Down</span>
+                    <svg width="25" height="37" viewBox="0 0 25 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.5 0V35M12.5 35L1 23.5M12.5 35L24 23.5" stroke="#C1D9CB" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <section id="introduction" class="introduction">
+            <div class="background introduction__background">
+                <svg class="background__tile" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect opacity="0.55" x="87.5" y="350" width="87.5" height="87.5" transform="rotate(-180 87.5 350)" fill="#33ABA2"></rect>
+                    <rect opacity="0.7" x="87.5" y="262.5" width="87.5" height="87.5" transform="rotate(-180 87.5 262.5)" fill="#33ABA2"></rect>
+                    <rect opacity="0.55" x="87.5" y="175" width="87.5" height="87.5" transform="rotate(-180 87.5 175)" fill="#33ABA2"></rect>
+                    <rect opacity="0.55" x="175" y="262.5" width="87.5" height="87.5" transform="rotate(-180 175 262.5)" fill="#33ABA2"></rect>
+                    <rect opacity="0.7" x="175" y="175" width="87.5" height="87.5" transform="rotate(-180 175 175)" fill="#33ABA2"></rect>
+                    <rect opacity="0.55" x="262.5" y="175" width="87.5" height="87.5" transform="rotate(-180 262.5 175)" fill="#33ABA2"></rect>
+                    <rect opacity="0.55" x="175" y="87.5" width="87.5" height="87.5" transform="rotate(-180 175 87.5)" fill="#33ABA2"></rect>
+                    <rect opacity="0.8" x="87.5" y="87.5" width="87.5" height="87.5" transform="rotate(-180 87.5 87.5)" fill="#33ABA2"></rect>
+                    <rect opacity="0.7" x="262.5" y="87.5" width="87.5" height="87.5" transform="rotate(-180 262.5 87.5)" fill="#33ABA2"></rect>
+                    <rect opacity="0.55" x="350" y="87.5" width="87.5" height="87.5" transform="rotate(-180 350 87.5)" fill="#33ABA2"></rect>
+                </svg>
+            </div>
+            <div class="row gx-0 my-4 my-lg-5 align-items-center">
+                <div class="col-lg-12">
+                    <div class="featured-text text-center text-lg-left px-5">
+                        <h2 class="mb-lg-5" data-animate-in="up">Expert consultations, compassionate home visits, and advanced wellness solutions await you at Optima</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects-->
+        <section class="projects-section" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-lg-4"><img class="img-fluid mb-3 mb-lg-0 featured-img" src="static/img/doctor.png" alt="..." /></div>
+                    <div class="col-lg-8">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4 class="mb-lg-5" data-animate-in="up">YOUR HEALTH, YOUR SPACE: DOCTOR HOME SERVICE TAILORED FOR YOUR COMFORT</h4>
+                            <p class="text-black-80 mb-0" data-animate-in="down">
+                                Experience the convenience of professional healthcare delivered right to your doorstep in the heart of Bali’s tourism hub. Our skilled doctors provide expert consultation services, whether you’re staying in a hotel, villa, residence, or working in an office.
+                                <br>
+                                Equipped with all necessary facilities, medications, and even laboratory tests if required, we bring healthcare to your front door. No more hassle of commuting to a healthcare facility. Enjoy healthcare services from the comfort of your own space. And there’s more. We provide the added convenience of generating detailed medical reports for easy insurance reimbursements, ensuring peace of mind for both your health and financial well-being.
+                                <br>
+                                Elevate your Bali experience with Optima. Discover a new level of healthcare tailored to your comfort and convenience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="cards-section" id="cards">
+            <div class="container-fluid py-5">
+                <div class="row gx-0 justify-content-center">
+                    <!-- Row 1 -->
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/bali-belly-treatment.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Bali Belly Treatment</h3>
+                              <div class="content">
+                                <p>
+                                    Navigating through digestive discomfort while enjoying your Bali vacation
+                                    Embark on your Bali adventure without worries. “Bali Belly,” though not the most pleasant of travel companions, is a common occurrence for many tourists visiting Bali. It refers to the digestive discomfort often experienced due to changes in diet or water consumption.
+                                    <br>
+                                    At Optima Medical, we understand the inconvenience this can cause. With state-of-the-art facilities and access to a range of suitable medications, we’re well-equipped to address your symptoms and prevent any complications.
+                                    <br>
+                                    Our comprehensive approach includes laboratory tests to monitor your progress and ensure you get back to enjoying your Bali vacation in no time. Trust us to provide the care and solutions you need.
+                                    <br>
+                                    Experience the magic of Bali without the discomfort of “Bali Belly.” Don’t let digestive discomfort get in the way of your adventure. Contact us for Bali Belly treatment today!
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/wound.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Professional Wound Care Treatment</h3>
+                              <div class="content">
+                                <p>
+                                    Turn unpleasant incidents into hassle-free holidays with our professional wound care treatment
+                                    <br>
+                                    When it comes to your Bali vacation, unexpected accidents can happen, leading to injuries that require immediate attention. Our expert wound care focuses on providing initial treatment and ensuring proper wound healing. We rely on evidence-based treatments and utilize qualified medical equipment to help reduce complications, support the healing process, and ensure your safety.
+                                    <br>
+                                    While enjoying your holiday in Bali, accidents on the road or in other situations may occur. Improper care can exacerbate wounds and prolong the healing process. Trust our professional wound care team to provide you with the right treatment, ensuring a smooth recovery and allowing you to fully enjoy your Bali getaway.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/ear-wax.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Ear Wax Removal Service</h3>
+                              <div class="content">
+                                <p>
+                                    Enjoying the Beach, surfing, and diving: Addressing ear complications with our wax removal service
+                                    <br>
+                                    Enjoying the serene beauty of Bali often involves aquatic adventures like swimming, surfing, and diving. Unfortunately, these activities can lead to water getting trapped in the ear, causing discomfort or even infections. Inadequate treatment can exacerbate the situation. Attempting to clean your ears on your own may lead to irritation, and using cotton buds can push wax deeper.
+                                    <br>
+                                    At our center, we provide a safe, gentle, and effective ear wax removal service. Our experts ensure you experience comfort and clarity during your stay. Trust us for a hassle-free solution to your ear troubles.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/rabies.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Shielding Against Rabies</h3>
+                              <div class="content">
+                                <p>
+                                    From bites to wounds: guarding against rabies exposure from Dogs, Cats, Monkeys, and other susceptible animals. Make your holiday safe by preventing or promptly vaccinating if exposed
+                                    <br>
+                                    Bali, renowned for its natural beauty and diverse wildlife, invites adventure-seekers from around the world. However, it’s crucial to be aware of potential risks, including rabies exposure from animals such as dogs, cats, and monkeys. At Optima Medical, your well-being is our priority. We provide specialized wound care and efficient rabies vaccinations, ensuring your vacation is worry-free. Our experienced team is dedicated to delivering the highest standard of care.
+                                    <br>
+                                    Embark on your Bali adventure with peace of mind, knowing you’re protected against potential rabies risks. Explore this beautiful island with confidence, creating memories that will last a lifetime.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/sexually.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Sexually Transmitted Disease Screening</h3>
+                              <div class="content">
+                                <p>
+                                    Confidential STD testing: Lab-based treatment for your safety and well-being
+                                    <br>
+                                    Sexually Transmitted Diseases (STDs) are infections transmitted through sexual contact. Anyone who engages in sexual activity is at risk. These infections can have serious consequences if not treated promptly.
+                                    <br>
+                                    At Optima Medical, we provide comprehensive STD screening services to detect and treat infections early. Our lab-based approach ensures accurate results and optimal treatment plans. Rest assured, your privacy is our priority.
+                                    <br>
+                                    Our comprehensive STD screening covers a range of infections including Gonorrhea (GO), Chlamydia, Candida, Trichomonas, Herpes Simplex Virus (HSV), Syphilis, HIV, Hepatitis, and more. Early detection and treatment are key to maintaining your sexual health.
+                                    <br>
+                                    Protect your well-being. Get tested today for a safer, healthier tomorrow.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/pediatric.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Assisting with Pediatric Referrals</h3>
+                              <div class="content">
+                                <p>
+                                    Providing compassionate General Practitioner services for children, with support for referring to your preferred Pediatric Specialist
+                                    <br>
+                                    At Optima Medical, we understand that your child’s health is of utmost importance. Our dedicated team of compassionate general practitioners specializes in providing gentle and child-friendly healthcare. We take extra care to offer a range of pediatric syrups and medications, custom-tailored to your child’s specific needs. Should the need arise, we’re always ready to assist in referring you to your preferred pediatric specialist. Additionally, our team is committed to providing continuous follow-up evaluations, ensuring a smooth road to recovery. Your child’s well-being is in caring hands with us.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/fever.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Relief for Fever: Effective Therapies</h3>
+                              <div class="content">
+                                <p>
+                                    Fever causes unpacked: Lab-based solutions and vaccinations for Dengue, Typhoid, and more
+                                    <br>
+                                    Unraveling the Mystery of Fever: Understanding Its Causes and Risks. Fever is commonly caused by viral, bacterial, fungal, or parasitic infections. Recognizing the risks associated with fever is essential for prompt and effective treatment.
+                                    <br>
+                                    In Bali, where Dengue and Typhoid are endemic, our team is equipped to provide tailored lab tests to address your specific needs. Additionally, we offer vaccinations by appointment, ensuring that you’re safeguarded against these prevalent diseases
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/flu.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Combatting the Flu: Effective Treatment Options</h3>
+                              <div class="content">
+                                <p>
+                                    During the transition between seasons, especially in Bali’s tropical climate, the likelihood of contracting the flu increases. Flu is a contagious infection affecting the nose, throat, and lungs, spreading rapidly.
+                                    <br>
+                                    As the seasons shift, particularly in Bali’s tropical climate, the risk of catching the flu rises. The wind and changing weather patterns can facilitate the spread of viruses. When afflicted with the flu, you may experience respiratory discomfort, including a runny nose, sore throat, dry cough, and sneezing. In such times, when you’re not feeling your best, we can provide treatment and also offer <strong>influenza vaccines</strong> by appointment for prevention.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/nails.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Rusty Nails and Tetanus</h3>
+                              <div class="content">
+                                <p>
+                                    Understanding the bacterial infection by Clostridium Tetani. This disease can be triggered by both minor and severe wounds
+                                    <br>
+                                    Tetanus is a bacterial infection caused by Clostridium tetani. In Bali, there is a risk of getting infected, especially if you have a dirty wound or get injured by a rusty object. If you sustain an injury, it’s crucial to promptly clean the wound area and cover it with a bandage to prevent bacterial spores from entering. Equally important is getting a tetanus vaccination.
+                                    <br>
+                                    At our center, we provide comprehensive care for tetanus, including wound management and tetanus vaccinations. Your well-being is our priority.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/allergy.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Allergy testing: Identify your triggers</h3>
+                              <div class="content">
+                                <p>
+                                    To uncover allergy triggers: Detecting 55 types of allergens simultaneously
+                                    <br>
+                                    Our advanced screening includes a diverse range of allergens, from milk components to bee venom, as well as various food items like wheat, gluten, and seafood. This semi-quantitative test detects human IgE antibodies against inhalation or food allergens, providing crucial insights into potential reactions such as digestive disorders, skin irritation, rhinitis, or asthma.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/hangovers.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Revitalize and Recover from Hangovers</h3>
+                              <div class="content">
+                                <p>
+                                    Reclaim the night: Banish nausea, fatigue, and headaches with expert care
+                                    <br>
+                                    Beyond its natural beauty, Bali is renowned for its vibrant nightlife. However, the aftereffects of a wild night out can dampen your vacation. Nausea, vomiting, and loss of appetite can put a damper on your plans. That’s where we step in, offering effective remedies to ensure your party never goes overboard.
+                                    <br>
+                                    Trust us to get you back on your feet, ready to make the most of your Bali adventure!
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/physiotherapy.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">In-Home Physiotherapy Services</h3>
+                              <div class="content">
+                                <p>
+                                    Physiotherapy helps to restore movement and function when someone is affected by injury, illness or disability.
+                                    <br>
+                                    Discover the ultimate convenience of our physiotherapy services delivered right to your doorstep. Enjoy the full spectrum of health benefits without having to leave your home. Our dedicated healthcare professionals prioritize your unique needs through personalized, one-on-one sessions. Enhance your wellbeing with convenience and ease. Schedule your appointment in advance to ensure a truly personalized and convenient care experience. Your journey to optimal health begins at your doorstep!
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects-->
+        <section class="projects-section" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-lg-8 px-5">
+                        <div class="featured-text text-center text-lg-left px-0">
+                            <h4 class="mb-lg-5" data-animate-in="up">DIVERSE HEALTH SERVICES: YOUR PATH TO TOTAL WELLNESS</h4>
+                            <p class="text-black-80 mb-0" data-animate-in="down">
+                                Discover a wide range of services tailored for your well-being. From 24/7 medical care and advanced lab facilities to IV vitamin therapy and expert wound care, we have your health covered. 
+                                <br>
+                                Also, benefit from Medical Check-ups, teleconsultations, medical equipment rentals, Covid-19 testing, vaccinations, home nursing, first aid training, and swift ambulance services. Your health and well-being are our top priorities. We’ve condensed this list for easy comprehension and engagement.
+                                <br>
+                                We emphasize open communication between doctors and patients, ensuring that consultations are comfortable and that individual needs are met. We’re dedicated to continuously improving our services and facilities in line with the evolving needs and preferences of our valued patients. Elevate your healthcare experience with us. Choose Diverse Health Services for your complete well-being.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"><img class="img-fluid mb-3 mb-lg-0 featured-img" src="static/img/doctor2.png" alt="..." /></div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="cards-section" id="cards">
+            <div class="container-fluid py-5">
+                <div class="row gx-0 justify-content-center">
+                    <!-- Row 1 -->
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/24hours.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">24 Hours medical services</h3>
+                              <div class="content">
+                                <p>
+                                    We provide compassionate medical services right to your doorstep, whether it’s your home, hotel, or villa, 24 hours a day. Simply give us a call whenever you need assistance, and we’ll be there to assist you. If you prefer, you can also visit our center for quicker service.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/laboratory.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Medical laboratory</h3>
+                              <div class="content">
+                                <p>
+                                    An accurate and timely diagnostic resource, our partnered laboratory meets international standards for quality and is managed by an excellent team of experienced laboratory scientists. This ensures a comprehensive range of diagnostic tests, along with reliable and swift results.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/vitamin.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">IV vitamin therapy</h3>
+                              <div class="content">
+                                <p>
+                                    We utilize high-quality IV vitamins and antioxidants to ensure optimal results based on doctor consultations. Additionally, feel free to explore the various packages we have available
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/checkup.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Medical CheckUp (MCU)</h3>
+                              <div class="content">
+                                <p>
+                                    Opt for a comprehensive medical check-up to gain insights into your overall health. This proactive approach can help identify potential health issues before they arise, ensuring you stay on top of your well-being.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/teleconsultation.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Teleconsultation</h3>
+                              <div class="content">
+                                <p>
+                                    Connect with a Doctor to discuss non-emergency medical concerns over the phone or online, at a time that suits your schedule.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/vaccinations.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Vaccinations</h3>
+                              <div class="content">
+                                <p>
+                                    While in Bali, you may come across diseases to which you might not have immunity. The proper vaccinations can shield you from these potential health risks. Optima Medical offers a range of vaccinations including rabies, tetanus, dengue, Typhoid, Japanese Encephalitis, and more, available by appointment.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/antigen.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Antigen & PCR Covid19 swab test</h3>
+                              <div class="content">
+                                <p>
+                                    We offer swift and accurate services, integrated with the NAR system and PeduliLindungi application. Both home and corporate services are available for your convenience.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/homecare.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Home care nurses service</h3>
+                              <div class="content">
+                                <p>
+                                    Our home care nursing service offers personalized medical assistance right in the comfort of your own home. Working under the guidance of a licensed physician, our skilled professionals provide a range of services including wound care, medication management (including intravenous therapies and injections), vital sign monitoring, regular physical assessments, assistance with daily activities, and basic mobility support. Additionally, our in-home care nurses are adept at aiding patients in their recovery from accidents, surgeries, or injuries.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/training.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">First Aid Training</h3>
+                              <div class="content">
+                                <p>
+                                    We provide a variety of first aid and cardiopulmonary resuscitation (CPR) courses in both Bahasa Indonesia and English. These courses teach essential life-saving techniques and the necessary steps to prevent further injury when professional medical care is not immediately available.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/equipment.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Medical equipment for rent</h3>
+                              <div class="content">
+                                <p>
+                                    Explore our range of affordably priced medical equipment available for rent. From wheelchairs to crutches and more, we have what you need for a comfortable recovery.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/ambulance.jpeg')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Ambulance services</h3>
+                              <div class="content">
+                                <p>
+                                    Ensure your well-being with our ambulance services, available by appointment, providing the clinical or medical support you require.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-3 px-2">
+                        <div class="item">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/services/insurance.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Health Insurance Reimbursements</h3>
+                              <div class="content">
+                                <p>
+                                    We will provide the necessary documents such as medical reports and any other required paperwork to support your health insurance reimbursement. 
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects-->
+        <section class="projects-section" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-lg-4"><img class="img-fluid mb-3 mb-lg-0 featured-img" src="static/img/admin.png" alt="..." /></div>
+                    <div class="col-lg-8">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4 class="mb-lg-5" data-animate-in="up">WALK IN AND EXPERIENCE SEAMLESS CARE FOR YOUR HEALTH NEEDS</h4>
+                            <p class="text-black-80 mb-0" data-animate-in="down">
+                                For those in close proximity to our center, we extend a warm welcome. You can easily seek prompt care by visiting us directly at Jl. Raya Semer No. 63, Kerobokan. Feel free to walk in at your convenience or if you prefer, schedule an appointment in advance.
+                                <br>
+                                Experience seamless healthcare designed with your needs in mind. At Optima Medical, we are dedicated to providing you with exceptional medical services in a manner that ensures your comfort. You can trust us to prioritize your well-being.
+                                <br>
+                                Should you have any questions or require further information, please do not hesitate to contact us. We look forward to serving you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Google Review-->
+        <section class="google-review-section" id="google-review">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-12 mx-auto text-center" data-animate-in="left">
+                        <i class="far fa-message fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5" data-animate-in="up">What They Said About Our Services</h2>
+                        <!-- <div id="google-reviews"></div> -->
+                        <div class='sk-ww-google-reviews' data-embed-id='243210'></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signup-->
+        <section class="signup-section" id="signup">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-12 mx-auto text-center" data-animate-in="up">
+                        <i class="far fa-paper-plane fa-2x mb-5 text-white"></i>
+                        <h2 class="text-white mb-5" data-animate-in="left">
+                            Looking for reliable 24-hours medical services? <br>
+                            Get in touch with us for professional care!</h2>
+                        <a class="btn btn-primary" href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F" data-animate-in="right">
+                            <i class="fab fa-whatsapp fa-2x text-white align-middle"></i>
+                            Consult via Whatsapp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100 animatable moveUp">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50 mb-5">Jl. Raya Semer No.63, Kerobokan, Kec. Kuta Utara, Kabupaten Badung, Bali 80361</div>
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">081385911911</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mb-3 mb-md-0">
+                        <div class="card py-0 h-100 animatable moveUp">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map text-primary mb-2"></i>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.4065527474986!2d115.1624447!3d-8.652827799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2394db54b8769%3A0x7c96a006aa62e5c2!2sOptima%20Medical!5e0!3m2!1sen!2sid!4v1703023540713!5m2!1sen!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" target="_blank" href="https://www.instagram.com/optimamedical.bali/"><i class="fab fa-instagram"></i></a>
+                    <a class="mx-2" target="_blank" href="https://youtube.com/@OptimaMedical"><i class="fab fa-youtube"></i></a>
+                    <a class="mx-2" target="_blank" href="https://www.facebook.com/optimamedical.id?mibextid=JRoKGi"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Whatsapp Side Button -->
+        <div class="wa__button">
+            <a class="btn btn-primary" target="_blank" href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                <i class="fab fa-whatsapp fa-3x text-white align-middle"></i>
+            </a>
+        </div>
+
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Optima 2023</div></footer>
+        
+    </div>
+
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Google Review -->
+    <script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
+    <!-- Instagram -->
+    <!-- <script type="text/javascript" src="app.bundle.js"></script> -->
+<script type="text/javascript" src="app.bundle.js"></script></body>
