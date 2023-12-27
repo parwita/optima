@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optima</title>
+  <link rel="icon" type="image/x-icon" href="./static/img/favicon.png" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+  <style>
+        .content { 
+                display: none; 
+        }
+        .loading-overlay { 
+            position: fixed; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 9999; 
+            opacity: 1; 
+            /* Initial opacity */ 
+            transform: scale(1); 
+            /* Initial scale */ 
+            animation: scaleOpacity 2s ease-in-out forwards; 
+            /* Apply animation */ 
+            pointer-events: none;
+        } 
+  
+        @keyframes scaleOpacity { 
+            0% { 
+                /* transform: scale(1);  */
+                opacity: 1; 
+            } 
+  
+            100% { 
+                /* transform: scale(0.8);  */
+                opacity: 0; 
+                display: none; 
+                /* Hide overlay after animation */ 
+            } 
+        } 
+  
+        .loading-logo { 
+            background: url('./static/img/loading-logo.svg');
+            background-repeat: no-repeat;
+            margin-bottom: 20px;
+            width: 100px; 
+            height: 100px; 
+            margin-left: 20px;
+            animation: beat 1.5s ease-in-out infinite; 
+        } 
+  
+        @keyframes beat { 
+            0% { 
+                transform: scale(1); 
+                opacity: 0;
+            } 
+
+            50% {
+                opacity: 1;
+            }
+  
+            100% { 
+                opacity: 0;
+                transform: scale(1.2); 
+            } 
+        } 
+  </style>
+<link href="main.css" rel="stylesheet"></head>
+
+<body id="page-top">
+    <!-- Loading Page -->
+    <div class="loading-overlay"> 
+        <div class="loading-logo"></div> 
+    </div> 
+    <div class="content">
+        <!-- Navigation-->
+        <section id="navigation">
+
+            <nav id="navbar" class="">
+                <div class="nav-wrapper">
+                  <!-- Navbar Logo -->
+                  <div class="logo">
+                    <!-- Logo Placeholder for Inustration -->
+                    <a href="index.html">
+                        <img class="logo-base" src="static/img/logo.svg" alt="..." />
+                        <img class="logo-scrolled" src="static/img/logo-2.svg" alt="..." />
+                    </a>
+                  </div>
+              
+                  <!-- Navbar Links -->
+                  <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="iv-packages.html" class="active">IV Packages</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                  </ul>
+                </div>
+            </nav>
+              
+              
+            <!-- Menu Icon -->
+            <div class="menuIcon">
+                <span class="icon icon-bars"></span>
+                <span class="icon icon-bars overlay"></span>
+            </div>
+              
+              
+            <div class="overlay-menu">
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="iv-packages.html" class="active">IV Packages</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                  </ul>
+            </div>
+        </section>
+
+        <!-- Animated Hero -->
+        <div id="hero" class="hero">
+            <div class="background hero__background" style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.7) 85%, #000000 100%), url('static/img/bg-drip.jpeg');">
+                <div class="background__text">
+                    <span>Optima</span>
+                </div>
+                <svg class="background__tile" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="262.5" y="87.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="262.5" y="175" width="87.5" height="87.5" fill="white"/>
+                    <rect x="175" y="87.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="175" y="175" width="87.5" height="87.5" fill="white"/>
+                    <rect x="87.5" y="175" width="87.5" height="87.5" fill="white"/>
+                    <rect x="175" y="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="262.5" y="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect x="87.5" y="262.5" width="87.5" height="87.5" fill="white"/>
+                    <rect y="262.5" width="87.5" height="87.5" fill="white"/>
+                </svg>
+    
+                <svg class="background__wave" width="100%" height="150px" fill="none"><path fill="white" d="M 0 81.4529 C 312.861 86.1755 443.115 151.636 870.8 49.1233 C 1292.68 -52.5833 1311.74 30.9535 1530.27 65.3886 C 1835.33 110.679 2160.19 178.354 2560 81.453 V 227.455 L 0 227.454 V 81.4529 Z"><animate repeatCount="indefinite" fill="freeze" attributeName="d" dur="20s" values="M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z; M0 86.3149C316 86.315 444 159.155 884 51.1554C1324 -56.8446 1320.29 34.1214 1538 70.4063C1814 116.407 2156 188.408 2560 86.315V232.317L0 232.316V86.3149Z; M0 53.6584C158 11.0001 213 0 363 0C513 0 855.555 115.001 1154 115.001C1440 115.001 1626 -38.0004 2560 53.6585V199.66L0 199.66V53.6584Z; M0 25.9086C277 84.5821 433 65.736 720 25.9086C934.818 -3.9019 1214.06 -5.23669 1442 8.06597C2079 45.2421 2208 63.5007 2560 25.9088V171.91L0 171.91V25.9086Z"></animate></path></svg>
+            </div>
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span>Discover Bali's</span> Best-Kept Secret: Optima's Drip Experience
+                </h1>
+                <!-- <p class="hero__subtitle">
+                    Expert consultations, compassionate home visits, and advanced wellness solutions await you at Optima
+                </p> -->
+                <div class="hero__scroll">
+                    <span>Scroll Down</span>
+                    <svg width="25" height="37" viewBox="0 0 25 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.5 0V35M12.5 35L1 23.5M12.5 35L24 23.5" stroke="#C1D9CB" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <section id="introduction" class="introduction">
+            <div class="background introduction__background">
+                <svg class="background__tile" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect opacity="0.55" x="87.5" y="350" width="87.5" height="87.5" transform="rotate(-180 87.5 350)" fill="#33ABA2"></rect>
+                    <rect opacity="0.7" x="87.5" y="262.5" width="87.5" height="87.5" transform="rotate(-180 87.5 262.5)" fill="#33ABA2"></rect>
+                    <rect opacity="0.55" x="87.5" y="175" width="87.5" height="87.5" transform="rotate(-180 87.5 175)" fill="#33ABA2"></rect>
+                    <rect opacity="0.55" x="175" y="262.5" width="87.5" height="87.5" transform="rotate(-180 175 262.5)" fill="#33ABA2"></rect>
+                    <rect opacity="0.7" x="175" y="175" width="87.5" height="87.5" transform="rotate(-180 175 175)" fill="#33ABA2"></rect>
+                    <rect opacity="0.55" x="262.5" y="175" width="87.5" height="87.5" transform="rotate(-180 262.5 175)" fill="#33ABA2"></rect>
+                    <rect opacity="0.55" x="175" y="87.5" width="87.5" height="87.5" transform="rotate(-180 175 87.5)" fill="#33ABA2"></rect>
+                    <rect opacity="0.8" x="87.5" y="87.5" width="87.5" height="87.5" transform="rotate(-180 87.5 87.5)" fill="#33ABA2"></rect>
+                    <rect opacity="0.7" x="262.5" y="87.5" width="87.5" height="87.5" transform="rotate(-180 262.5 87.5)" fill="#33ABA2"></rect>
+                    <rect opacity="0.55" x="350" y="87.5" width="87.5" height="87.5" transform="rotate(-180 350 87.5)" fill="#33ABA2"></rect>
+                </svg>
+            </div>
+            <div class="row gx-0 my-4 my-lg-5 align-items-center">
+                <div class="col-lg-12">
+                    <div class="featured-text text-center text-lg-left px-5">
+                        <h2 class="mb-lg-5" data-animate-in="up">Expert consultations, compassionate home visits, and advanced wellness solutions await you at Optima</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects-->
+        <section class="projects-section" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-5 mb-lg-5 justify-content-center">
+                    <div class="col-lg-4 position-relative"><img class="img-fluid img-overlap left rotateZ" src="static/img/drip/infusion-packages.png" alt="..." /></div>
+                    <div class="col-lg-8">
+                        <div class="bg-primary text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h3 class="text-white" data-animate-in="left">INFUSION PACKAGES
+                                    </h4>
+                                    <p class="text-white" data-animate-in="right">
+                                        When you are feeling rundown and tired lately, our multivitamin drip booster is a game-changer when it comes to rejuvenating your body and promoting overall well-being.Our multivitamin drip booster is designed to replenish essential nutrients and help you regain your vitality. The multivitamin infusion delivers a potent blend of vitamins, minerals and antioxidants directly into your bloodstream, bypassing the digestive system for maximum absorption and effectiveness.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="cards-section" id="cards">
+            <div class="container-fluid py-5">
+                <div class="row gx-0 justify-content-center">
+                    <!-- Row 1 -->
+                    <div class="col-lg-4">
+                        <div class="item" data-animate-in="down">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/drip/ob-ultimate.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Opti Boost Ultimate</h3>
+                              <div class="content">
+                                <h4>
+                                    Multivitamin drip booster with anti nausea, stomach protector, and painkiller
+                                </h4>
+                                <span class="separator"></span>
+                                <p>
+                                    Introducing the Opti Boost Ultimate, a nurturing multivitamin infusion carefully crafted to replenish your body and enhance your overall well-being. This revitalizing drip is enriched with nine water-soluble <strong>vitamins (B1, B2, B3, B5, B6, B7, B9, B12, C) and three fat-soluble vitamins (A, D, E)</strong>, providing your body with the essential nutrients it craves.
+                                    <br><br>
+                                    But there’s more to it – our unique blend is designed to offer additional benefits. Wave goodbye to any post-drip discomfort with our <strong>anti-nausea</strong> component. Your stomach will appreciate the added <strong>protection</strong>, and any lingering discomfort will be gently eased with our effective <strong>painkiller</strong>.
+                                    <br><br>
+                                    Embrace a newfound vitality with Infi Boost Ultimate – because you deserve to feel your absolute best.
+                                    <br><br>
+                                    Discover the gentle yet powerful touch of Opti Boost Ultimate today!
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="item" data-animate-in="down">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/drip/ob-vitamax.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Opti Boost Vitamax</h3>
+                              <div class="content">
+                                <h4>
+                                    Nutritional supplement to fulfill daily water-soluble vitamin requirements, administered intravenously with an infusion
+                                </h4>
+                                <span class="separator"></span>
+                                <p>
+                                    Elevate your Bali experience with Opti Boost Vitamax, a multivitamin infusion tailored for travelers seeking peak vitality. Packed with essential nutrients including Thiamine mononitrate (equivalent to <strong>vitamin B1 2.5 mg</strong>), Riboflavin Na phosphate (equivalent to <strong>vitamin B2 3.6 mg</strong>), Nicotinamide 40 mg, Pyridoxine HCl (equivalent to <strong>vitamin B6 4 mg</strong>), Na pantothenate (equivalent to <strong>pantothenic acid 15 mg</strong>), Na ascorbate (equivalent to <strong>vitamin C 100 mg), Biotin 60 mcg, Folic acid 0.4 mg,</strong> and <strong>Cyanocobalamin 5 mcg</strong>, along with fat-soluble <strong>vitamins A, D, and E</strong>. This Drip Booster is your key to a revitalized and energized Bali adventure.
+                                    <br><br>
+                                    Unlock the full potential of your Bali getaway with Opti Boost Vitamax – because your health is your greatest travel companion. Experience vitality like never before!
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="item" data-animate-in="down">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/drip/ob-b-light.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Opti Boost B Light</h3>
+                              <div class="content">
+                                <h4>
+                                    Vitamin B1 100 mg, vitamin B6 200 mg, vitamin B12 200 mcg administered intravenously through infusion
+                                </h4>
+                                <span class="separator"></span>
+                                <p>
+                                    Illuminate your Bali adventure with Opti Boost B Light, a powerful multivitamin infusion carefully crafted to amplify your vitality. Enriched with <strong>Vitamin B1</strong> (100 mg), <strong>Vitamin B6</strong> (200 mg), and <strong>Vitamin B12</strong> (200 mcg), this Drip Booster is your gateway to boundless energy and enhanced well-being.
+                                    <br><br>
+                                    Whether you’re exploring Bali’s lush landscapes or indulging in its vibrant culture, Opti Boost B Light ensures you’re at your absolute best. Say yes to memorable experiences and embrace every moment with this invigorating boost.
+                                    <br><br>
+                                    Elevate your Bali journey with Opti Boost B Light – because your adventure deserves to shine!
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="col-lg-4">
+                        <div class="item" data-animate-in="down">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/drip/ob-c-light.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Opti Boost C Light</h3>
+                              <div class="content">
+                                <h4>
+                                    Containing Vitamin C combined with collagen, administered intravenously via infusion
+                                </h4>
+                                <span class="separator"></span>
+                                <p>
+                                    Elevate your Bali experience with Opti Boost C Light, a radiant blend of multivitamin goodness featuring the dynamic duo of <strong>Vitamin C</strong> and <strong>collagen</strong>. This Drip Booster is your secret weapon to a vibrant and refreshed you.
+                                    <br><br>
+                                    Enriched with the powerful synergy of Vitamin C and collagen, this infusion revitalizes your body, leaving you with a radiant glow that complements the beauty of Bali’s sun-kissed shores.
+                                    <br><br>
+                                    Let Opti Boost C Light be your partner in capturing the essence of your Bali adventure. Embrace vitality and radiance like never before.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="item" data-animate-in="down">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/drip/bali-belly-opti-hydration.png')"></div>
+                            </div>
+                            <div class="social">
+                                <a href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    <div class="whatsapp">
+                                        <i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Bali Belly Opti Hydration</h3>
+                              <div class="content">
+                                <h4>
+                                    Vitamin drip booster enriched with anti-nausea, stomach protection, and pain relief components, accompanied by oral medication for diarrhea
+                                </h4>
+                                <span class="separator"></span>
+                                <p>Experience the ultimate relief with Bali Belly Opti Hydration, a powerful multivitamin infusion designed to combat dehydration and restore your well-being. This Drip Booster is packed with a blend of nine water-soluble vitamins (<strong>B1, B2, B3, B5, B6, B7 or biotin, B9 or folic acid, B12, C</strong>) and three fat-soluble <strong>vitamins (A, D, E)</strong>, ensuring your body gets the essential nutrients it needs.
+                                <br><br>
+                                But that’s not all – we go the extra mile. Say goodbye to post-travel tummy troubles with our <strong>anti-nausea</strong> component. Your stomach will appreciate the added protection, and any discomfort will be gently eased with our effective <strong>painkiller</strong>. Plus, our <strong>Stomach Protector</strong> and complementary <strong>oral medicine</strong> for treating diarrhea ensure you’re back on your feet, ready to make the most of your Bali adventure.
+                                <br><br>
+                                Don’t let Bali Belly get in the way of your journey. Choose Bali Belly Opti Hydration for a swift and revitalizing recovery.</p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects-->
+        <section class="projects-section py-3" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-4 position-relative"><img class="img-fluid img-overlap right rotateZ" src="static/img/drip/injection-packages.png" alt="..." /></div>
+                    <div class="col-lg-8 order-lg-first">
+                        <div class="bg-primary text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text right w-100 my-auto text-center text-lg-right">
+                                    <h3 class="text-white" data-animate-in="right">INJECTION PACKAGES</h4>
+                                    <p class="text-white" data-animate-in="left">
+                                        With our multivitamin injection booster, you can embrace life with renewed vigor, knowing that you are giving your body essential nutrients it needs to thrive. Say goodbye to fatigue and hello to boundless energy. Get ready to revitalize and thrive with our extraordinary multivitamin injection booster.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </section>
+
+        <section class="cards-section" id="cards">
+            <div class="container-fluid py-5">
+                <div class="row gx-0 justify-content-center">
+                    <!-- Row 1 -->
+                    <div class="col-lg-4">
+                        <div class="item" data-animate-in="down">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/drip/ob-shot.png')"></div>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Opti B Shot</h3>
+                              <div class="content">
+                                <h4>
+                                    Direct Intravenous Injection of Vitamin B1 100 mg, Vitamin B6 200 mg, and Vitamin B12 200 mcg, Without the Need for Infusion
+                                </h4>
+                                <span class="separator"></span>
+                                <p>
+                                    Revitalize your Bali adventure with Opti B Shot, a powerful multivitamin injection enriched with <strong>Vitamin B1</strong> (100 mg), <strong>Vitamin B6</strong> (200 mg), and <strong>Vitamin B12</strong> (200 mcg). This injection-exclusive therapy delivers a rapid and efficient boost of essential vitamins, ensuring you experience quick rejuvenation without the need for a lengthy infusion.
+                                    <br><br>
+                                    Bid farewell to time-consuming drip sessions – with Opti B Shot, your therapy is completed in a fraction of the time, allowing you to maximize every moment of your Bali getaway. It’s the perfect solution for discerning travelers seeking efficient vitality enhancement.
+                                    <br><br>
+                                    Choose Opti B Shot and seize the day, because in Bali, every second counts.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="item" data-animate-in="down">
+                            <div class="img">
+                              <div class="img-content" style="background-image: url('./static/img/drip/oc-shot.png')"></div>
+                            </div>
+                            <div class="text-container">
+                              <h3 class="title">Opti C Shot</h3>
+                              <div class="content">
+                                <h4>
+                                    Direct Intravenous Injection of Vitamin C with Collagen, Without the Need for Infusion
+                                </h4>
+                                <span class="separator"></span>
+                                <p>
+                                    Embark on a journey of instant rejuvenation with the Opti C Shot – a powerful multivitamin injection featuring the dynamic combination of <strong>Vitamin C</strong> and <strong>collagen</strong>. Experience a swift and efficient boost of vitality that will leave you feeling refreshed and invigorated.
+                                    <br><br>
+                                    This unique treatment delivers essential vitamins directly into your bloodstream through intravenous injection, omitting the need for a lengthy drip or infusion. With Opti C Shot, your therapy is completed in record time, ensuring you can swiftly return to relishing your Bali adventure.
+                                    <br><br>
+                                    Tailored for the fast-paced traveler who craves efficiency without compromising on results, Opti C Shot is your shortcut to boundless vitality.
+                                </p>
+                              </div>
+                              <div class="readmore">
+                                <h3>show more</h3>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Review-->
+        <section class="google-review-section" id="google-review">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-12 mx-auto text-center" data-animate-in="left">
+                        <i class="far fa-message fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5" data-animate-in="up">What They Said About Our Services</h2>
+                        <!-- <div id="google-reviews"></div> -->
+                        <div class='sk-ww-google-reviews' data-embed-id='243210'></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signup-->
+        <section class="signup-section" id="signup">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-12 mx-auto text-center" data-animate-in="up">
+                        <i class="far fa-paper-plane fa-2x mb-5 text-white"></i>
+                        <h2 class="text-white mb-5" data-animate-in="left">
+                            Looking for reliable 24-hours medical services? <br>
+                            Get in touch with us for professional care!</h2>
+                        <a class="btn btn-primary" href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F" data-animate-in="right">
+                            <i class="fab fa-whatsapp fa-2x text-white align-middle"></i>
+                            Consult via Whatsapp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100 animatable moveUp">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50 mb-5">
+                                    <a target="_blank" href="https://maps.google.com/maps?ll=-8.652828,115.162445&z=16&t=m&hl=en&gl=ID&mapclient=embed&cid=8977538857698518466">Jl. Raya Semer No.63, Kerobokan, Kec. Kuta Utara, Kabupaten Badung, Bali 80361</a>
+                                </div>
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50 mb-5">
+                                    <a target="_blank" href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                                    081385911911
+                                    </a>
+                                </div>
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">
+                                    <a target="_blank" href="mailto:optima@optimamedika.com">
+                                        optima@optimamedika.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mb-3 mb-md-0">
+                        <div class="card py-0 h-100 animatable moveUp">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map text-primary mb-2"></i>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.4065527474986!2d115.1624447!3d-8.652827799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2394db54b8769%3A0x7c96a006aa62e5c2!2sOptima%20Medical!5e0!3m2!1sen!2sid!4v1703023540713!5m2!1sen!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" target="_blank" href="https://www.instagram.com/optimamedical.bali/"><i class="fab fa-instagram"></i></a>
+                    <a class="mx-2" target="_blank" href="https://youtube.com/@OptimaMedical"><i class="fab fa-youtube"></i></a>
+                    <a class="mx-2" target="_blank" href="https://www.facebook.com/optimamedical.id?mibextid=JRoKGi"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Whatsapp Side Button -->
+        <div class="wa__button">
+            <a class="btn btn-primary" target="_blank" href="https://wa.me/6281385911911?text=Hello%21%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20services%20offered%20by%20Optima%20Medical.%20Could%20you%20provide%20some%20details%3F">
+                <i class="fab fa-whatsapp fa-3x text-white align-middle"></i>
+            </a>
+        </div>
+
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Optima 2023</div></footer>
+        
+    </div>
+
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Google Review -->
+    <script src='https://widgets.sociablekit.com/google-reviews/widget.js' async defer></script>
+    <!-- <script type="text/javascript" src="app.bundle.js"></script> -->
+<script type="text/javascript" src="app.bundle.js"></script></body>
